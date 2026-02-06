@@ -1,0 +1,16 @@
+version: '1.0'
+services:
+  postges:
+    image: postgres:18
+    container_name: notification_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: notifications_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
